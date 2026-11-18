@@ -903,7 +903,7 @@ document.querySelectorAll("[data-linkedin]").forEach((lien) => {
   lien.href = "https://www." + "linkedin" + ".com/in/" + lien.dataset.linkedin + "/";
 });
 
-// ===== Liens du menu : on saute directement à la section, puis on se recale (images ou polices qui finissent de se charger) =====
+// ===== Liens du menu : on saute directement à la section et on la garde en place pendant que la page finit de se charger =====
 document.querySelectorAll('a[href^="#"]').forEach((lien) => {
   lien.addEventListener("click", (e) => {
     const adresse = lien.getAttribute("href");
@@ -914,10 +914,22 @@ document.querySelectorAll('a[href^="#"]').forEach((lien) => {
       const marge = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
       const reste = cible.getBoundingClientRect().top - marge;
       const finDePage = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-      if (Math.abs(reste) > 2 && !(finDePage && reste > 0)) window.scrollTo({ top: window.scrollY + reste, behavior: "instant" });
+      if (Math.abs(reste) > 1 && !(finDePage && reste > 0)) window.scrollTo({ top: window.scrollY + reste, behavior: "instant" });
     };
     aller();
-    [250, 700, 1500, 3000].forEach((delai) => setTimeout(aller, delai));
+    // Si la taille de la page change (image, police), on se replace tout de suite, avant l'affichage : aucun saut visible
+    let observateur = null;
+    const arreter = () => {
+      if (observateur) observateur.disconnect();
+      ["wheel", "touchstart", "keydown", "mousedown"].forEach((ev) => window.removeEventListener(ev, arreter));
+    };
+    if ("ResizeObserver" in window) {
+      observateur = new ResizeObserver(aller);
+      observateur.observe(document.body);
+    }
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach((ev) => window.addEventListener(ev, arreter, { passive: true }));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(aller);
+    setTimeout(arreter, 3000);
     if (window.history && history.pushState) history.pushState(null, "", adresse);
   });
 });
