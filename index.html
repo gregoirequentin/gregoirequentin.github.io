@@ -837,11 +837,36 @@ const observateur = new IntersectionObserver(
 sections.forEach((s) => s && observateur.observe(s));
 
 // ===== Âge calculé automatiquement (né le 29 octobre 2005) =====
-// Il augmente tout seul chaque 29 octobre : rien à modifier.
-const aujourdhui = new Date();
-let age = aujourdhui.getFullYear() - 2005;
-if (aujourdhui < new Date(aujourdhui.getFullYear(), 9, 29)) age -= 1; // 9 = octobre
-document.querySelectorAll(".age").forEach((el) => (el.textContent = age));
+// Il augmente tout seul chaque 29 octobre : rien à modifier. Il se remet aussi à jour tout seul si la page reste ouverte.
+// Test : ajouter ?test-anniversaire à l'adresse du site simule un anniversaire dans 10 minutes (?test-anniversaire=60 : dans 1 minute).
+let decalage = 0;
+let reglage = null;
+try { reglage = new URLSearchParams(window.location.search).get("test-anniversaire"); } catch (e) {}
+if (reglage !== null) {
+  const secondes = parseInt(reglage, 10) || 600;
+  const maintenant = new Date();
+  let prochain = new Date(maintenant.getFullYear(), 9, 29);
+  if (prochain <= maintenant) prochain = new Date(maintenant.getFullYear() + 1, 9, 29);
+  decalage = prochain.getTime() - maintenant.getTime() - secondes * 1000;
+  var etatTest = document.createElement("div");
+  etatTest.setAttribute("role", "status");
+  etatTest.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:400;background:#1f2a44;color:#fff;border:2px solid #fff;border-radius:12px;padding:.6rem .9rem;font:600 14px system-ui,sans-serif;max-width:calc(100vw - 24px)";
+  document.body.appendChild(etatTest);
+}
+function majAge() {
+  const t = new Date(Date.now() + decalage);
+  let age = t.getFullYear() - 2005;
+  if (t < new Date(t.getFullYear(), 9, 29)) age -= 1; // 9 = octobre
+  document.querySelectorAll(".age").forEach((el) => (el.textContent = age));
+  if (typeof etatTest !== "undefined") {
+    const fin = new Date(t.getFullYear() + (t.getMonth() > 9 || (t.getMonth() === 9 && t.getDate() >= 29) ? 1 : 0), 9, 29);
+    const reste = Math.max(0, Math.ceil((fin.getTime() - t.getTime()) / 1000));
+    const dejaPasse = t.getMonth() === 9 && t.getDate() === 29;
+    etatTest.textContent = "Test : " + age + " ans" + (dejaPasse ? " (anniversaire passé)" : " | 22 ans dans " + Math.floor(reste / 60) + " min " + String(reste % 60).padStart(2, "0") + " s");
+  }
+}
+majAge();
+setInterval(majAge, typeof etatTest !== "undefined" ? 1000 : 60000);
 
 // ===== Année du pied de page =====
 document.getElementById("annee").textContent = new Date().getFullYear();
