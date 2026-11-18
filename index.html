@@ -903,19 +903,22 @@ document.querySelectorAll("[data-linkedin]").forEach((lien) => {
   lien.href = "https://www." + "linkedin" + ".com/in/" + lien.dataset.linkedin + "/";
 });
 
-// ===== Liens du menu : si la page a bougé pendant le défilement (images qui se chargent), on se recale sur la bonne section =====
+// ===== Liens du menu : on saute directement à la section, puis on se recale (images ou polices qui finissent de se charger) =====
 document.querySelectorAll('a[href^="#"]').forEach((lien) => {
-  lien.addEventListener("click", () => {
-    const cible = document.querySelector(lien.getAttribute("href"));
-    if (!cible || lien.getAttribute("href") === "#") return;
-    const recaler = () => {
+  lien.addEventListener("click", (e) => {
+    const adresse = lien.getAttribute("href");
+    const cible = adresse.length > 1 ? document.querySelector(adresse) : null;
+    if (!cible) return;
+    e.preventDefault();
+    const aller = () => {
       const marge = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
       const reste = cible.getBoundingClientRect().top - marge;
       const finDePage = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
-      if (Math.abs(reste) > 4 && !finDePage) window.scrollTo({ top: window.scrollY + reste, behavior: "instant" });
+      if (Math.abs(reste) > 2 && !(finDePage && reste > 0)) window.scrollTo({ top: window.scrollY + reste, behavior: "instant" });
     };
-    setTimeout(recaler, 900);
-    setTimeout(recaler, 1800);
+    aller();
+    [250, 700, 1500, 3000].forEach((delai) => setTimeout(aller, delai));
+    if (window.history && history.pushState) history.pushState(null, "", adresse);
   });
 });
 
