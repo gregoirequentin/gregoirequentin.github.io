@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <!-- Le site est en français : on évite qu'un navigateur le traduise de travers -->
+  <meta http-equiv="Content-Language" content="fr">
+  <meta name="google" content="notranslate">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Demande aux moteurs de recherche de ne pas afficher ce site. Pour le retirer plus tard, supprime cette ligne. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Grégoire QUENTIN – Portfolio</title>
+  <meta name="description" content="Portfolio de Grégoire Quentin, étudiant en techniques du son à l'ESRA Bretagne (option musique) : parcours, stages, compétences, hobbies et productions. Disponible pour des stages, alternance ou CDD/CDI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <!-- =============== EN-TÊTE / MENU =============== -->
+  <header class="entete">
+    <div class="conteneur">
+      <a class="logo" href="#accueil">Grégoire QUENTIN</a>
+      <button class="bouton-menu" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav aria-label="Navigation principale">
+        <ul class="menu" id="menu">
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#recommandation">Recommandations</a></li>
+          <li><a href="#pratiques">Compétences</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#productions">Productions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- =============== ACCUEIL =============== -->
+    <section class="hero" id="accueil">
+      <div class="conteneur">
+        <h1 class="hero-nom">Grégoire<br>QUENTIN</h1>
+        <div class="hero-bas">
+          <div>
+            <p class="hero-texte">Étudiant en techniques du son, option musique. Saxophone, mixage et jeux vidéo. Disponible pour des stages, alternance ou <span class="nb">CDD/CDI</span>.</p>
+            <div class="boutons">
+              <a class="btn" href="#productions">Voir mes productions</a>
+              <a class="btn btn-contour" href="#contact">Me contacter</a>
+            </div>
+          </div>
+          <img class="hero-photo" src="moi.jpg" alt="Portrait de Grégoire QUENTIN : lunettes rondes, polo bleu, sourire discret" width="720" height="960">
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== À PROPOS =============== -->
+    <section class="bloc" id="apropos">
+      <div class="conteneur bloc-grille">
+        <h2>À propos</h2>
+        <div>
+          <!-- L'âge se calcule tout seul à partir de la date de naissance (voir js/main.js) -->
+          <p class="chapeau">J'ai <span class="age">21</span> ans, je vis à Rennes et j'étudie le son à l'ESRA Bretagne.</p>
+          <p>Je fais de la sonorisation, de la prise de son et du mixage. J'ai fait des stages en studio, à la radio et dans le spectacle vivant. À <span class="nb">Saint-Malo</span>, j'ai assuré la régie son de 110 représentations de Terra Aletia. Je joue aussi du saxophone, en solo comme en groupe.</p>
+          <p>Je cherche à rejoindre une équipe technique aux côtés d'un régisseur son. Mon objectif est de devenir régisseur son dans une salle de concert.</p>
+          <dl class="faits">
+            <div><dt>Formation</dt><dd>ESRA Son, option musique, à l'ESRA Bretagne - 3e année</dd></div>
+            <div><dt>Ville</dt><dd>Rennes</dd></div>
+            <div><dt>Je cherche</dt><dd>Un stage aux côtés d'un régisseur son</dd></div>
+            <div><dt>Mon objectif</dt><dd>Devenir régisseur son dans une salle de concert</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== PARCOURS ET ÉTUDES =============== -->
+    <section class="bloc parcours" id="parcours">
+      <div class="conteneur bloc-grille">
+        <h2>Parcours et études</h2>
+        <div>
+          <div class="groupe">
+            <h3>Études</h3>
+            <ol class="etapes">
+              <li>
+                <span class="date">2024 – aujourd'hui</span>
+                <div><img class="logo-org" src="logo-esra-bretagne.png" alt="Logo de l'ESRA Bretagne" onerror="if(!this.dataset.essai){this.dataset.essai=1;this.src='https://esra.edu/wp-content/uploads/2025/05/Logo-ESRA-transparent.webp'}else{this.remove()}"><h4>ESRA Son, option musique</h4><p>ESRA Bretagne, à Rennes. Je suis en troisième année et je prépare le DESTS (diplôme d'études supérieures des techniques du son, niveau Bac+3). La formation couvre la prise de son, le montage, le mixage, la sonorisation et la <span class="nb">post-production</span> audio.</p></div>
+              </li>
+              <li>
+                <span class="date">2021 – 2024</span>
+                <div><img class="logo-org" src="logo-lycee-ozanam.png" alt="Logo du lycée Frédéric Ozanam" onerror="this.remove()"><h4>Baccalauréat professionnel MELEC</h4><p>Métiers de l'électricité et de ses environnements connectés, au lycée professionnel Frédéric Ozanam, à <span class="nb">Cesson-Sévigné</span>. Diplôme obtenu en juin 2024, avec une préparation à l'habilitation électrique (B0 exécutant, B1V).</p></div>
+              </li>
+              <li>
+                <span class="date">Jusqu'en 2021</span>
+                <div><img class="logo-org" src="logo-college-saint-vincent.png" alt="Logo du collège Saint-Vincent Providence" onerror="this.remove()"><h4>Collège <span class="nb">Saint-Vincent</span> Providence</h4><p>À Rennes, du CM1 à la 3e, avec l'option <span class="nb">chant-choral</span> pendant toute cette période. Brevet obtenu en juin 2021 avec la mention Bien.</p></div>
+              </li>
+            </ol>
+          </div>
+          <div class="groupe">
+            <h3>Stages et expériences</h3>
+            <ol class="etapes">
+              <li>
+                <span class="date">26 juin – 25 août 2026</span>
+                <div><img class="logo-org" src="logo-terra-aletia.png" alt="Logo de Terra Aletia" onerror="this.remove()"><h4>Fiat Lux, spectacle Terra Aletia, <span class="nb">Saint-Malo</span></h4><p>Stage de technicien son sur un spectacle immersif : 59 jours, soit 110 représentations. Installation de la sonorisation dans l'acoustique exigeante de l'église <span class="nb">Sainte-Croix</span>, régie son en direct (console Yamaha TF1, micros HF, prévention des larsens, diffusion sur Reaper), mixage du micro de l'acteur à chaque représentation et démontage. Travail en autonomie, à distance de mon tuteur.</p></div>
+              </li>
+              <li>
+                <span class="date">Depuis 2025</span>
+                <div><img class="logo-org" src="logo-radio-saint-vincent.png" alt="Logo de Radio Saint-Vincent" onerror="if(!this.dataset.essai){this.dataset.essai=1;this.src='https://radiosaintvincent.fr/upload/design/617923575e5265.22675196.png'}else{this.remove()}"><h4>Radio <span class="nb">Saint-Vincent</span>, Rennes</h4><p>Depuis l'an dernier, soit 8 mois au total : technique à la régie, technicien duplex et démontage du duplex.</p></div>
+              </li>
+              <li>
+                <span class="date">En cours</span>
+                <div><img class="logo-org" src="logo-silo.png" alt="Logo de SILO" onerror="this.remove()"><h4>Bénévole chez SILO</h4><p>Toujours bénévole : aide aux animateurs lors de rassemblements de collégiens.</p></div>
+              </li>
+              <li>
+                <span class="date">17, 19 et 21 juin 2026</span>
+                <div><img class="logo-org" src="logo-popup.png" alt="Logo de POP'UP" onerror="this.remove()"><h4>POP'UP, Côte d'Émeraude</h4><p>Trois jours : installation, plateau, technique et démontage.</p></div>
+              </li>
+              <li>
+                <span class="date">1 – 3 mai 2026</span>
+                <div><img class="logo-org" src="logo-avr-sonorisation.png" alt="Logo d'AVR Sonorisation" onerror="this.remove()"><h4>AVR Sonorisation, Rennes</h4><p>Trois jours : installation, plateau, accueil des groupes de musique, technique et démontage.</p></div>
+              </li>
+              <li>
+                <span class="date">Sept. 2025</span>
+                <div><img class="logo-org" src="logo-acomaudio.png" alt="Logo d'Acomaudio" onerror="this.remove()"><h4>Acomaudio, Rennes</h4><p>Stage de 2 semaines : accueil, gestion du planning et des encaissements, préparation du matériel pour un concert, montage de la sono du concert et maintenance du matériel.</p></div>
+              </li>
+              <li>
+                <span class="date">Juil. 2025</span>
+                <div><img class="logo-org" src="logo-white-oak-studio.png" alt="Logo du White Oak Studio" onerror="this.remove()"><h4>White Oak Studio, Rennes</h4><p>Stage de 2 semaines : intégration d'une carte son, mastering, préparation d'une playlist, mesure et réglage d'un caisson de basse, montage et mixage d'une composition musicale, enregistrement d'un saxophone.</p></div>
+              </li>
+              <li>
+                <span class="date">2021 – 2024</span>
+                <div><h4>Stages du bac pro MELEC</h4><p>24 semaines de stage chez Talendi, Rennes Métropole (éclairage public), SPIE, Château des Pères et chez les artisans électriciens Vettier Martial et Dynamo.</p></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== RECOMMANDATIONS =============== -->
+    <section class="bloc" id="recommandation">
+      <div class="conteneur bloc-grille">
+        <h2>Recommandations</h2>
+        <div>
+          <blockquote class="citation">
+            <p>Son sérieux, sa détermination et sa collaboration fluide avec les équipes techniques et artistiques font de lui un profil de valeur.</p>
+            <footer>Jery Vannieuwenhuyse, maître de stage et directeur des relations publiques de Terra Aletia. Lettre du 18 octobre 2026.</footer>
+          </blockquote>
+
+          <details class="lettre">
+            <summary>Lire la lettre complète</summary>
+            <div class="lettre-texte">
+              <p>À Mulhouse, le 18 octobre 2026</p>
+              <p><strong>Objet : Lettre de recommandation – Grégoire Quentin</strong></p>
+              <p>À l'attention des employeurs et responsables de formation,</p>
+              <p>J'atteste par la présente que Grégoire Quentin a réalisé avec succès son stage de technicien son sur le spectacle immersif Terra Aletia à <span class="nb">Saint-Malo</span>, du 26 juin au 25 août 2026.</p>
+              <p>Porteur d'un trouble du spectre autistique (TSA), Grégoire a fait preuve d'un courage et d'un professionnalisme remarquables. Malgré les défis du quotidien, il a su s'investir pleinement et mener à bien toutes ses missions :</p>
+              <ul>
+                <li><strong>Installation et technique :</strong> participation active à l'installation du matériel, à la sécurisation des espaces et au calage de la sonorisation dans l'acoustique exigeante de l'église <span class="nb">Sainte-Croix</span>.</li>
+                <li><strong>Exploitation en direct :</strong> gestion rigoureuse de la régie son (console Yamaha TF1, micros HF, prévention des larsens) et de la diffusion sur le logiciel Reaper.</li>
+                <li><strong>Autonomie et <span class="nb">sang-froid</span> :</strong> une véritable capacité d'adaptation et une grande autonomie face aux imprévus et à la distance de son tuteur.</li>
+              </ul>
+              <p>Son sérieux, sa détermination et sa collaboration fluide avec les équipes techniques et artistiques font de lui un profil de valeur. Ce stage, réalisé dans le cadre de sa formation à l'ESRA Bretagne (ISTS 2), a prouvé sa capacité à surmonter les obstacles avec brio. Je le recommande vivement pour de futures opportunités dans le spectacle vivant.</p>
+              <p class="signature"><strong>Jery Vannieuwenhuyse</strong><br>Maître de stage / Directeur des relations publiques – Terra Aletia</p>
+            </div>
+          </details>
+          <!--PDF-DEBUT--><p class="lien-pdf"><a href="lettre-recommandation-gregoire-quentin.pdf">Ouvrir la lettre originale (PDF)</a></p><!--PDF-FIN-->
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== COMPÉTENCES ET PRATIQUES =============== -->
+    <section class="bloc" id="pratiques">
+      <div class="conteneur bloc-grille">
+        <h2>Compétences et pratiques</h2>
+        <div>
+          <div class="groupe-tags">
+            <h3 class="sous-titre-bloc">Ce que je maîtrise</h3>
+            <ul class="tags">
+              <li>Prise de son</li><li>Mixage</li><li>Montage audiovisuel</li><li>Installation technique audio</li><li>Gestion du matériel de scène</li><li>Musicien</li>
+            </ul>
+          </div>
+          <div class="groupe-tags">
+            <h3 class="sous-titre-bloc">Mes logiciels</h3>
+            <ul class="tags">
+              <li><img src="logiciel-pro-tools.png" alt="" onerror="this.remove()">Pro Tools</li>
+              <li><img src="logiciel-ableton-live.png" alt="" onerror="this.remove()">Ableton Live</li>
+              <li><img src="logiciel-reaper.png" alt="" onerror="this.remove()">Reaper</li>
+              <li><img src="logiciel-serato.png" alt="" onerror="this.remove()">Serato</li>
+              <li><img src="logiciel-davinci-resolve.png" alt="" onerror="this.remove()">DaVinci Resolve</li>
+              <li><img src="logiciel-wwise.png" alt="" onerror="this.remove()">Wwise</li>
+            </ul>
+          </div>
+          <div class="groupe-tags">
+            <h3 class="sous-titre-bloc">Ce que j'apprends cette année</h3>
+            <ul class="tags apprend">
+              <li><img src="logiciel-nuendo.png" alt="" onerror="this.remove()">Nuendo</li><li>Mixage Dolby Atmos</li><li>Mixage multicanal</li><li>Console Avid S6</li><li>Sonorisation</li><li>Synthèse sonore</li><li>Production vocale</li><li>Mastering</li>
+            </ul>
+          </div>
+          <div class="groupe-tags">
+            <h3 class="sous-titre-bloc">Mes pratiques</h3>
+            <ul class="liste-pratiques">
+              <li>Saxophone alto : depuis 8 ou 9 ans, en solo comme en groupe</li>
+              <li>Mixage sur table de mixage : depuis décembre 2025, avec une Numark NS4FX et Serato (techno, rock, EDM)</li>
+              <li>Chant et chorale : option <span class="nb">chant-choral</span> au collège, du CM1 à la 3e</li>
+              <li>Régie son et sonorisation de spectacles et de concerts</li>
+              <li>Radio : régie et duplex à Radio <span class="nb">Saint-Vincent</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============== HOBBIES =============== -->
+    <section class="bloc bande-jaune" id="hobbies">
+      <div class="conteneur bloc-grille">
+        <h2>Hobbies</h2>
+        <ul class="hobbies">
+          <li><h3>Écouter de la musique</h3><p>J'aime tous les styles de musique, sans en écarter aucun.</p></li>
+          <li><h3>Saxophone</h3><p>Je joue du saxophone alto depuis 8 ou 9 ans. J'aime jouer aussi bien en solo qu'en groupe.</p></li>
+          <li><h3>Jeux vidéo</h3><p>Flight Simulator, Fortnite, Minecraft : je joue surtout avec des amis.</p></li>
+          <li><h3>Mixage</h3><p>Je mixe depuis décembre 2025, surtout de la techno, du rock et de l'EDM, sur une Numark NS4FX avec le logiciel Serato, pour le plaisir comme pour des soirées.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =============== PRODUCTIONS =============== -->
+    <section class="bloc" id="productions">
+      <div class="conteneur">
+        <h2 class="titre-large">Productions</h2>
+        <p class="intro-large">Des réalisations scolaires et <span class="nb">extra-scolaires</span>. Les contenus audio et vidéo se lisent directement sur cette page.</p>
+
+        <!-- Production 000 : MOOD'R LINE, ENREGISTREMENT MUSICAL EN EXTÉRIEUR -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="video audio" data-soundcloud="https://api.soundcloud.com/tracks/soundcloud:tracks:2430289782?secret_token=s-kBkS0RnxvE4" data-titre="Mao's Saying, morceau enregistré avec Mood'R Line"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Audio</span></div>
+            <h3>Mood'R Line, enregistrement musical en extérieur</h3>
+            <p>Production de fin de deuxième année (ISTS 2), réalisée en groupe de six. Le 9 mai 2026, nous avons enregistré sur place le groupe Mood'R Line, dans sa salle de répétition à Mordelles, avec une régie mobile (Antelope Orion 32+ et Pro Tools), un retour casque pour chaque musicien et un enregistrement en overdub : batterie, guitares, basse, clavier, puis voix. Deux morceaux ont été enregistrés, « Mao's Saying » (à écouter ici) et « SDOT ». Le 25 mai, nous avons tourné leur clip dans un bar à Rennes avec l'équipe image : j'ai installé, avec un camarade, le couple stéréo de prise de son. Retour du professeur : une très belle intro avec un son de batterie très acoustique, une très belle prise de son, un joli traitement et un joli suivi de la voix, une bonne gestion des plans sonores et de la réverbération, et un dossier de production exemplaire.</p>
+          </div>
+        </article>
+
+        <!-- Production 00 : ENREGISTREMENT DE PIANO, SUNSET LULLABY -->
+        <article class="prod">
+          <div class="prod-media">
+            <!-- ✏️ À MODIFIER : colle ici le lien SoundCloud de l'enregistrement à la place de LIEN_SOUNDCLOUD -->
+            <div class="video audio" data-soundcloud="https://api.soundcloud.com/tracks/soundcloud:tracks:2430290727?secret_token=s-LH7PX6JqJ7k" data-titre="Sunset Lullaby, enregistrement de piano"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Audio</span></div>
+            <h3>Sunset Lullaby, enregistrement de piano</h3>
+            <p>Enregistrement d'un piano quart de queue, réalisé en groupe de six en deuxième année (ISTS 2), le 26 février 2026 chez Duros Piano, à Rennes. Un pianiste professionnel a joué « Sunset Lullaby », l'un de ses morceaux en cours de composition. Nous avons combiné un couple AB large (deux AKG C414 en omnidirectionnel), un couple XY précis (DPA 4011) et un micro omnidirectionnel de soutien (AKG C414 XLS), enregistrés avec un préampli Neve 4081 et un Sound Devices 664. Sur sept prises, nous avons gardé la première malgré les bruits de la rue. Le mixage, sous Pro Tools, se limite à quelques égalisations et une légère réverbération. Retour du professeur : un très bon travail d'organisation, un timbre très bien capté, une implantation des micros cohérente, une réverbération judicieuse, et un dossier de production complet et très agréable à lire.</p>
+          </div>
+        </article>
+
+        <!-- Production 0 bis : FILM D'ANIMATION PINECONE MAN -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="video" data-youtube="gxILF0mMezw" data-titre="Pinecone Man, film d'animation"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Animation</span></div>
+            <h3>Pinecone Man, film d'animation</h3>
+            <p>Film d'animation 3D réalisé en 2025 par une étudiante de l'ESRA Animation, avec le son fait par les étudiants de première année (ISTS 1). Dans une banlieue américaine des années 1920, une petite fille donne vie à un jouet fabriqué avec une pomme de pin. Avec deux camarades de ma promotion, j'ai assuré l'ingénierie du son du film, et l'une d'elles en a aussi composé la musique. Retour du professeur de son : une très bonne direction artistique, qui s'accorde très bien avec les images. Seul point à améliorer, les voix auraient pu être plus fortes.</p>
+          </div>
+        </article>
+
+        <!-- Production 0 ter : LIVRE AUDIO -->
+        <article class="prod">
+          <div class="prod-media">
+            <!-- ✏️ À MODIFIER : colle ici le lien SoundCloud de ton livre audio à la place de LIEN_SOUNDCLOUD -->
+            <div class="video audio" data-soundcloud="https://api.soundcloud.com/tracks/soundcloud:tracks:2430325518?secret_token=s-fpIeRBpSUA8" data-titre="Le Masque de la Mort rouge, livre audio"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Audio</span></div>
+            <h3>Le Masque de la Mort rouge, livre audio</h3>
+            <p>Livre audio de 5 min 42 s, réalisé en groupe de quatre en première année (ISTS 1, <span class="nb">2024-2025</span>), à partir de la nouvelle d'Edgar Allan Poe dans la traduction de Charles Baudelaire. Le travail a consisté à construire l'ambiance autour de la voix, avec un découpage technique séquence par séquence : bruitages, ambiances, jingle et musiques originales. Retour du professeur : une ambiance immersive, des bruitages et des musiques très bien choisis, une interprétation de qualité et une diction claire. À améliorer : mieux équilibrer le volume de la voix par rapport aux ambiances pour qu'elle ne soit pas noyée, et soigner davantage le fade du début.</p>
+          </div>
+        </article>
+
+        <!-- Production 00 bis : SOUND DESIGN, JURY INDIVIDUEL -->
+        <article class="prod">
+          <div class="prod-media">
+            <!-- ✏️ À MODIFIER : colle ici le lien SoundCloud du sound design à la place de LIEN_SOUNDCLOUD_SOUND_DESIGN -->
+            <div class="video audio" data-soundcloud="https://api.soundcloud.com/tracks/soundcloud:tracks:2430324801?secret_token=s-ETir2C21Yoi" data-titre="Sound design, jury individuel"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Audio</span></div>
+            <h3>Sound design, jury individuel</h3>
+            <p>Pièce de sound design de 1 min 30 s, réalisée seul sous Pro Tools pour le jury individuel de deuxième année (ISTS 2), à l'automne 2025. Retour du professeur : un très bon travail sur les textures, un très bon rythme de montage, une bonne spatialisation et une bonne dynamique. Pistes pour progresser : développer le bas du spectre et transformer davantage les bruitages utilisés.</p>
+          </div>
+        </article>
+
+        <!-- Production IMMERSION : FILM D'ANIMATION IMMERSION -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="video" data-youtube="oPTUD3dGZtU" data-titre="Immersion, film d'animation"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Animation</span></div>
+            <h3>Immersion, film d'animation</h3>
+            <p>Film d'animation de l'ESRA Animation, réalisé en deuxième année (ISTS 2), pour lequel j'ai fait partie de l'équipe son de six personnes. Un jeune homme en manque d'inspiration va au cinéma pour se changer les idées, et se retrouve invité à entrer dans le film : il arrive dans une ancienne cité aztèque, où il rencontre un serpent à plumes. La musique originale, composée par Hayden Thomas Roberts, oppose deux mondes : un son plus bluesy pour la vie moderne, puis un son plus orchestral pour la cité aztèque.</p>
+          </div>
+        </article>
+
+        <!-- Production 0 quater : FICTION DE FIN DE DEUXIÈME ANNÉE -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="video" data-youtube="fvqCLXl7tr0" data-titre="Le Scrutin, fiction de fin de deuxième année (ISTS 2)"></div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette">Scolaire</span><span class="etiquette">Vidéo</span></div>
+            <h3>Le Scrutin, fiction de fin de deuxième année</h3>
+            <p>Film de fin d'année de deuxième année (ISTS 2), réalisé en équipe : une fiction comique. Retour du professeur : un projet qui fonctionne très bien, avec un scénario bien ficelé, une comédie qui marche, un beau travail de cadre, une esthétique maîtrisée et un montage fluide et bien rythmé. Pour le son, « très bon travail de la prise de son au mixage », avec un seul point de vigilance : la batterie de la <span class="nb">bande-son</span> intervient trop souvent et trop fort.</p>
+          </div>
+        </article>
+
+        <!-- Production 5 : PHOTOS DE RÉGIE -->
+        <article class="prod prod-haut">
+          <div class="prod-media">
+            <div class="galerie">
+              <a href="coulisses-1.jpg"><img src="coulisses-1-mini.jpg" alt="Vue depuis la régie dans l'église Sainte-Croix : la console, un ordinateur portable et, au fond, le spectacle éclairé en bleu" width="800" height="600" loading="lazy"></a>
+              <a href="coulisses-2.jpg"><img src="coulisses-2-mini.jpg" alt="La console Yamaha TF1 de la régie son, avec ses voies étiquetées et ses faders" width="800" height="600" loading="lazy"></a>
+              <a href="coulisses-3.jpg"><img src="coulisses-3-mini.jpg" alt="La régie : la console Yamaha TF1, la console lumière et deux ordinateurs portables, avec l'église en arrière-plan" width="800" height="600" loading="lazy"></a>
+              <a href="coulisses-4.jpg"><img src="coulisses-4-mini.jpg" alt="La console Yamaha TF1 pilotée depuis une tablette, avec les voies annonces, DPA, HF 1 et HF 2" width="800" height="600" loading="lazy"></a>
+              <a class="affiche" href="affiche-terra-aletia.jpg"><img src="affiche-terra-aletia-mini.jpg" alt="Affiche du spectacle son et lumière immersif Terra Aletia, dans le sillage des corsaires, à l'église Sainte-Croix de Saint-Malo, du 9 juillet au 23 août 2026" width="700" height="990" loading="lazy"></a>
+            </div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette extra"><span class="nb">Extra-scolaire</span></span><span class="etiquette">Photographie</span></div>
+            <h3>Dans les coulisses de Terra Aletia</h3>
+            <p>Photos de la régie son du spectacle immersif Terra Aletia, à l'église <span class="nb">Sainte-Croix</span> de <span class="nb">Saint-Malo</span>, prises pendant mon stage : la console Yamaha TF1, le pilotage depuis une tablette et le spectacle vu depuis ma position, et l'affiche du spectacle. Cliquez sur une photo pour l'agrandir.</p>
+          </div>
+        </article>
+
+        <!-- Production 6 : EN STUDIO -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="galerie">
+              <a href="studio-1.jpg"><img src="studio-1-mini.jpg" alt="Moi en studio, assis devant un écran qui affiche Ableton Live, avec un clavier maître sur le bureau et des synthétiseurs derrière moi" width="800" height="600" loading="lazy"></a>
+            </div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette extra"><span class="nb">Extra-scolaire</span></span><span class="etiquette">Photographie</span></div>
+            <h3>Au White Oak Studio</h3>
+            <p>Photo prise pendant mon stage de deux semaines au White Oak Studio, à Rennes : je travaille sur Ableton Live, entre les enceintes de monitoring, un clavier maître et des synthétiseurs. Cliquez sur la photo pour l'agrandir.</p>
+          </div>
+        </article>
+
+        <!-- Production 7 : CHEZ ACOMAUDIO -->
+        <article class="prod">
+          <div class="prod-media">
+            <div class="galerie">
+              <a href="studio-2.jpg"><img src="studio-2-mini.jpg" alt="Moi, souriant, debout devant la grande console de mixage analogique Audient ASP8024, avec des enceintes de monitoring, un magnétophone à bobines et des écrans derrière moi" width="800" height="600" loading="lazy"></a>
+            </div>
+          </div>
+          <div class="prod-texte">
+            <div class="etiquettes"><span class="etiquette extra"><span class="nb">Extra-scolaire</span></span><span class="etiquette">Photographie</span></div>
+            <h3>Chez Acomaudio</h3>
+            <p>Photo prise pendant mon stage de deux semaines chez Acomaudio, à Rennes, en septembre 2025 : je suis à la console de mixage analogique, entouré d'enceintes de monitoring et d'un magnétophone à bobines. Cliquez sur la photo pour l'agrandir.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =============== CONTACT =============== -->
+    <section class="bloc sombre" id="contact">
+      <div class="conteneur">
+        <h2 class="titre-large">Contact</h2>
+        <p style="margin-bottom:2rem">Un stage, un projet, ou l'envie d'échanger ? <span class="nb">Écris-moi</span>.</p>
+        <a class="contact-mail" href="mailto:gregoirequentin05@gmail.com">gregoirequentin05@gmail.com</a>
+        <ul class="contact-liste">
+          <li>Téléphone : <a href="tel:+33617279632">06 17 27 96 32</a> <button type="button" class="copier" data-copier="06 17 27 96 32">Copier le numéro</button></li>
+          <li>Rennes, France</li>
+        </ul>
+        <div class="boutons">
+          <details class="menu-mail">
+            <summary class="btn">Écrire un <span class="nb">e-mail</span></summary>
+            <ul class="menu-mail-liste">
+              <li><a href="mailto:gregoirequentin05@gmail.com">Autre messagerie (celle de mon appareil)</a></li>
+              <li><button type="button" data-webmail="gmail" data-nom="gregoirequentin05" data-domaine="gmail.com">Gmail</button></li>
+              <li><button type="button" data-webmail="outlook" data-nom="gregoirequentin05" data-domaine="gmail.com">Outlook (navigateur)</button></li>
+              <li><button type="button" data-webmail="yahoo" data-nom="gregoirequentin05" data-domaine="gmail.com">Yahoo Mail</button></li>
+            </ul>
+          </details>
+          <button type="button" class="btn btn-contour" data-copier="gregoirequentin05@gmail.com">Copier l'adresse <span class="nb">e-mail</span></button>
+        </div>
+        <p class="note-contact">Choisissez votre messagerie dans la liste. « Autre messagerie » ouvre celle installée sur votre appareil (Outlook, Mail, Orange, Free, iCloud, Proton…). Sinon, copiez simplement mon adresse.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =============== PIED DE PAGE =============== -->
+  <footer class="pied sombre">
+    <div class="conteneur">
+      <p>© <span id="annee">2026</span> Grégoire QUENTIN. Tous droits réservés.</p>
+      <p>Hébergé sur atspace.com. Les contenus audio et vidéo sont diffusés par des services de streaming. <a href="#accueil">Retour en haut</a></p>
+    </div>
+  </footer>
+
+  <!-- Fenêtre pour agrandir les photos -->
+  <div class="visionneuse" role="dialog" aria-label="Image agrandie" aria-modal="true">
+    <button type="button">Fermer</button>
+    <img src="" alt="">
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

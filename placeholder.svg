@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Image à remplacer">
+  <rect width="800" height="600" fill="#dfd8c8"/>
+  <rect x="40" y="40" width="720" height="520" rx="24" fill="none" stroke="#1d6f66" stroke-width="6" stroke-dasharray="18 14"/>
+  <circle cx="290" cy="240" r="48" fill="#d9582f"/>
+  <path d="M120 470 L330 300 L470 410 L560 340 L690 470 Z" fill="#1d6f66"/>
+  <text x="400" y="535" font-family="Arial, sans-serif" font-size="30" text-anchor="middle" fill="#1f2a44">Image à remplacer</text>
+</svg>

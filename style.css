@@ -1,0 +1,332 @@
+/* =====================================================
+   CHARTE GRAPHIQUE  (modifie ici les couleurs et polices)
+   ===================================================== */
+:root {
+  /* Couleurs */
+  --bleu: #1d6f66;          /* vert profond : titres, liens */
+  --bleu-fonce: #14524b;
+  --encre: #1f2a44;         /* bleu nuit : texte et sections sombres */
+  --encre-douce: #4a5568;   /* texte secondaire */
+  --brume: #f1f3f7;         /* fond de certaines sections, étiquettes */
+  --neige: #ffffff;         /* fond principal */
+  --soleil: #e76f51;        /* corail : boutons et accents */
+  --indigo: #5b6ee1;        /* halo de la bannière */
+  --menthe: #2a9d8f;        /* halo de la bannière */
+  --trait: #dcdfe8;
+
+  /* Polices */
+  --f-titre: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-texte: "Hanken Grotesk", "Segoe UI", system-ui, sans-serif;
+
+  --largeur: 1140px;
+}
+
+/* ===== Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  margin: 0;
+  font-family: var(--f-texte);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--encre);
+  background: var(--neige);
+}
+img, iframe { max-width: 100%; display: block; }
+h1, h2, h3 { font-family: var(--f-titre); margin: 0; letter-spacing: -0.03em; }
+h2 { font-size: clamp(2.3rem, 5.5vw, 4rem); line-height: 1; font-weight: 800; color: var(--bleu); }
+h3 { font-size: 1.45rem; line-height: 1.2; font-weight: 700; }
+p { margin: 0 0 1em; max-width: 62ch; }
+a { color: var(--bleu); text-underline-offset: .2em; }
+a:hover { color: var(--bleu-fonce); }
+:focus-visible { outline: 3px solid var(--bleu); outline-offset: 3px; border-radius: 4px; }
+.sombre :focus-visible, .hero :focus-visible, .bande-jaune :focus-visible { outline-color: var(--soleil); }
+.bande-jaune :focus-visible { outline-color: var(--encre); }
+
+.conteneur { width: min(100% - 2.5rem, var(--largeur)); margin-inline: auto; }
+.bloc { padding: clamp(4rem, 9vw, 7.5rem) 0; }
+.bloc-grille {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 2fr);
+  gap: clamp(2rem, 5vw, 5rem); align-items: start;
+}
+/* Titre dans la colonne de gauche : taille limitée pour que « Recommandation » tienne */
+.bloc-grille > h2 { position: sticky; top: 6rem; font-size: clamp(1.7rem, 3.3vw, 2.6rem); overflow-wrap: normal; hyphens: none; }
+
+.lien-evitement {
+  position: absolute; left: -999px; top: 0; background: var(--encre); color: #fff;
+  padding: .7rem 1rem; z-index: 200;
+}
+.lien-evitement:focus { left: 0; }
+
+/* ===== En-tête ===== */
+.entete {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255, 255, 255, .96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--trait);
+}
+.entete .conteneur { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.logo { font-family: var(--f-titre); font-weight: 800; font-size: 1.3rem; letter-spacing: -0.04em; color: var(--encre); text-decoration: none; }
+.logo::after { content: ""; display: inline-block; width: .5em; height: .5em; margin-left: .15em; background: var(--soleil); border-radius: 50%; }
+.menu { display: flex; gap: 1.6rem; list-style: none; margin: 0; padding: 0; }
+.menu a {
+  display: block; padding: .3rem 0; text-decoration: none; color: var(--encre);
+  font-weight: 600; font-size: 1rem; border-bottom: 3px solid transparent;
+}
+.menu a:hover { border-bottom-color: var(--soleil); color: var(--encre); }
+.menu a.actif { border-bottom-color: var(--bleu); }
+.bouton-menu {
+  display: none; background: var(--encre); color: #fff; border: 0; border-radius: 99px;
+  padding: .55rem 1.1rem; font: inherit; font-weight: 700; cursor: pointer;
+}
+
+/* ===== Accueil ===== */
+/* Bannière : halos de couleur sur bleu nuit, avec un voile sombre pour garder le texte lisible */
+.hero {
+  color: #fff; padding: clamp(3rem, 7vw, 6rem) 0 clamp(7rem, 14vw, 11rem); overflow: hidden;
+  background:
+    linear-gradient(rgba(18, 26, 52, .55), rgba(18, 26, 52, .7)),
+    radial-gradient(circle at 15% 25%, var(--soleil) 0, transparent 38%),
+    radial-gradient(circle at 85% 75%, var(--menthe) 0, transparent 42%),
+    radial-gradient(circle at 60% 10%, var(--indigo) 0, transparent 35%),
+    var(--encre);
+}
+.hero-nom {
+  font-size: clamp(3.3rem, 13vw, 11.2rem); line-height: .86; font-weight: 800;
+  letter-spacing: -0.055em; margin-bottom: 2rem;
+}
+.hero-bas { display: flex; flex-wrap: wrap; gap: 2rem 4rem; align-items: flex-end; justify-content: space-between; }
+.hero-texte { font-size: clamp(1.15rem, 2.2vw, 1.5rem); line-height: 1.45; max-width: 30ch; margin: 0 0 1.5rem; font-weight: 500; }
+.boutons { display: flex; flex-wrap: wrap; gap: .8rem; }
+.btn {
+  display: inline-block; padding: .85rem 1.6rem; border-radius: 99px; font-weight: 700;
+  text-decoration: none; background: var(--soleil); color: var(--encre); border: 2px solid var(--soleil);
+}
+.btn:hover { background: #fff; border-color: #fff; color: var(--encre); }
+.btn-contour { background: transparent; color: #fff; border-color: #fff; }
+.btn-contour:hover { background: #fff; color: var(--encre); }
+.hero-photo {
+  width: clamp(190px, 26vw, 320px); height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%;
+  border-radius: 36px; background: #dfe1f5; transform: rotate(4deg);
+  box-shadow: 14px 14px 0 var(--soleil);
+  margin-right: 14px; margin-bottom: calc(-1 * clamp(5rem, 10vw, 8rem));
+  position: relative; z-index: 2;
+}
+
+/* ===== À propos ===== */
+.chapeau { font-family: var(--f-titre); font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.25; letter-spacing: -0.02em; font-weight: 600; margin-bottom: 1.5rem; max-width: 30ch; }
+.faits { margin: 2.5rem 0 0; padding: 0; display: grid; gap: 0; }
+.faits div { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; padding: .9rem 0; border-top: 1px solid var(--trait); }
+.faits div:last-child { border-bottom: 1px solid var(--trait); }
+.faits dt { color: var(--encre-douce); font-weight: 600; }
+.faits dd { margin: 0; font-weight: 600; }
+
+/* ===== Parcours ===== */
+.parcours { background: var(--brume); }
+.groupe + .groupe { margin-top: 3.5rem; }
+.groupe > h3 { margin-bottom: .8rem; }
+.etapes { list-style: none; margin: 0; padding: 0; }
+.etapes li { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1.5rem; padding: 1.4rem 0; border-top: 2px solid var(--encre); }
+.etapes .date { font-family: var(--f-titre); font-weight: 800; font-size: 1.35rem; letter-spacing: -0.03em; color: var(--bleu); line-height: 1.2; }
+.etapes h4 { margin: 0 0 .25rem; font-family: var(--f-titre); font-size: 1.3rem; letter-spacing: -0.02em; }
+.etapes p { margin: 0; color: var(--encre-douce); }
+.logo-org { display: block; height: auto; width: auto; max-height: 72px; max-width: 220px; object-fit: contain; margin-bottom: .8rem; border-radius: 8px; }
+
+/* ===== Recommandation ===== */
+.citation { margin: 0 0 2rem; padding: 0 0 0 1.5rem; border-left: 6px solid var(--soleil); }
+.citation p { font-family: var(--f-titre); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 1rem; max-width: 34ch; }
+.citation footer { color: var(--encre-douce); font-weight: 600; max-width: 52ch; }
+.lettre { border-top: 2px solid var(--encre); border-bottom: 2px solid var(--encre); }
+.lettre summary { cursor: pointer; padding: 1rem 0; font-weight: 700; font-size: 1.1rem; list-style-position: inside; }
+.lettre[open] summary { border-bottom: 1px solid var(--trait); }
+.lettre-texte { padding: 1.5rem 0 .5rem; }
+.lettre-texte p { max-width: 68ch; }
+.lettre-texte ul { padding-left: 1.2rem; max-width: 68ch; }
+.lettre-texte li { margin-bottom: .6rem; }
+.lettre-texte .signature { margin-top: 1.5rem; }
+.lien-pdf { margin: 1rem 0 0; }
+
+/* ===== Pratiques ===== */
+.sous-titre-bloc { margin: 0 0 .9rem; font-family: var(--f-titre); font-size: 1.45rem; font-weight: 700; letter-spacing: -0.02em; }
+.groupe-tags + .groupe-tags { margin-top: 2.5rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .6rem; list-style: none; margin: 0; padding: 0; }
+.tags li { display: inline-flex; align-items: center; gap: .55rem; padding: .5rem 1.1rem; border-radius: 99px; background: var(--encre); color: #fff; font-weight: 600; }
+/* Icône d'un logiciel : fond blanc pour rester lisible sur le fond sombre de l'étiquette */
+.tags li img { width: 26px; height: 26px; object-fit: contain; background: #fff; border-radius: 7px; padding: 2px; margin-left: -.45rem; }
+.tags.apprend li { background: transparent; color: var(--encre); border: 2px solid var(--encre); }
+.liste-pratiques { margin: 0; padding: 0; list-style: none; }
+.liste-pratiques li { padding: .9rem 0; border-top: 1px solid var(--trait); font-weight: 500; }
+.liste-pratiques li:last-child { border-bottom: 1px solid var(--trait); }
+
+/* ===== Hobbies ===== */
+.bande-jaune { background: var(--soleil); }
+.bande-jaune h2 { color: var(--encre); }
+.hobbies { list-style: none; margin: 0; padding: 0; }
+.hobbies li {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 1.5rem 2.5rem; align-items: baseline;
+  padding: 1.5rem 1rem; margin-inline: -1rem; border-top: 2px solid var(--encre);
+}
+.hobbies li:last-child { border-bottom: 2px solid var(--encre); }
+.hobbies li:hover { background: var(--encre); color: #fff; }
+.hobbies h3 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 800; line-height: 1; }
+.hobbies p { margin: 0; }
+
+/* ===== Productions ===== */
+.titre-large { margin-bottom: 1rem; }
+.intro-large { color: var(--encre-douce); margin-bottom: clamp(2.5rem, 6vw, 4.5rem); }
+.prod { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+.prod + .prod { margin-top: clamp(3.5rem, 8vw, 6.5rem); }
+.prod:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr); }
+.prod:nth-of-type(even) .prod-media { order: 2; }
+.prod-texte .etiquettes { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.etiquette { font-size: .9rem; font-weight: 700; padding: .25rem .85rem; border-radius: 99px; background: var(--brume); color: var(--bleu); }
+.etiquette.extra { background: var(--soleil); color: var(--encre); }
+.prod h3 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; line-height: 1.05; margin-bottom: .8rem; }
+.prod-texte p { color: var(--encre-douce); margin: 0; }
+
+.video {
+  position: relative; width: 100%; aspect-ratio: 16 / 9;
+  background: var(--encre); border-radius: 28px; overflow: hidden;
+}
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video.vide { display: grid; place-items: center; text-align: center; padding: 1.5rem; color: #e4e8f2; font-size: 1rem; }
+.video.vide p { margin: 0; max-width: 34ch; }
+.video.audio { aspect-ratio: auto; height: 166px; border-radius: 20px; }
+
+.note-video { margin: .6rem 0 0; font-size: .9rem; color: var(--encre-douce); }
+.prod-media .note-video + .video { margin-top: 1rem; }
+
+.galerie { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+.galerie a { display: block; border-radius: 22px; overflow: hidden; background: var(--brume); }
+.galerie a:only-child { grid-column: span 2; }
+.galerie a.affiche { grid-column: 1 / -1; justify-self: center; width: min(100%, 280px); }
+.galerie a.affiche img { aspect-ratio: auto; object-fit: contain; }
+.galerie img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.galerie a:hover img { filter: brightness(.9); }
+
+.visionneuse { position: fixed; inset: 0; background: rgba(10, 13, 40, .94); display: none; align-items: center; justify-content: center; z-index: 300; padding: 1rem; }
+.visionneuse.ouverte { display: flex; }
+.visionneuse img { max-height: 85vh; max-width: 100%; border-radius: 16px; }
+.visionneuse button { position: absolute; top: 1rem; right: 1rem; font: inherit; font-weight: 700; background: var(--soleil); color: var(--encre); border: 0; border-radius: 99px; padding: .6rem 1.2rem; cursor: pointer; }
+
+/* ===== Charte graphique ===== */
+.charte { background: var(--brume); }
+.echantillons { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.echantillon { font-size: .95rem; font-weight: 600; }
+.echantillon .pastille { height: 90px; border-radius: 22px; margin-bottom: .6rem; border: 1px solid rgba(18, 22, 58, .15); }
+.echantillon span { display: block; font-weight: 500; color: var(--encre-douce); }
+.polices { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; }
+.specimen { font-size: 4.5rem; line-height: 1; margin-bottom: .6rem; }
+.specimen.titre { font-family: var(--f-titre); font-weight: 800; letter-spacing: -0.05em; color: var(--bleu); }
+.specimen.texte { font-family: var(--f-texte); font-weight: 600; }
+.polices p { margin-bottom: .3rem; }
+
+/* ===== Contact ===== */
+.sombre { background: var(--encre); color: #fff; }
+.sombre h2 { color: var(--soleil); }
+.contact-mail {
+  display: block; font-family: var(--f-titre); font-weight: 800; letter-spacing: -0.04em;
+  font-size: clamp(1.1rem, 5.4vw, 4rem); line-height: 1.05; color: #fff; text-decoration-color: var(--soleil);
+  text-decoration-thickness: 4px; overflow-wrap: anywhere; margin-bottom: 2rem;
+}
+.contact-mail:hover { color: var(--soleil); }
+.contact-liste { list-style: none; margin: 0 0 2rem; padding: 0; color: #dfe3ff; }
+.contact-liste li { margin-bottom: .4rem; }
+.contact-liste a { color: #fff; }
+
+.pied { background: var(--encre); color: #b9bfe6; padding: 0 0 2.5rem; font-size: .95rem; }
+.pied .conteneur { border-top: 1px solid #343a70; padding-top: 1.5rem; }
+.pied p { margin: 0 0 .3rem; max-width: none; }
+.pied a { color: #fff; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .bloc-grille { grid-template-columns: 1fr; }
+  .bloc-grille > h2 { position: static; font-size: clamp(2.3rem, 7vw, 3.2rem); }
+  .prod, .prod:nth-of-type(even) { grid-template-columns: 1fr; }
+  .prod:nth-of-type(even) .prod-media { order: 0; }
+  /* Téléphone et tablette en portrait : la description passe avant le lecteur / les photos */
+  .prod .prod-texte { order: -1; }
+  .hobbies li { grid-template-columns: 1fr; gap: .5rem; }
+  .hero-photo { margin-bottom: calc(-1 * clamp(5rem, 14vw, 8rem)); }
+}
+/* Le menu (7 liens) passe en bouton « Menu » dès 1000 px de large, tablettes comprises */
+@media (max-width: 1000px) {
+  .bouton-menu { display: block; margin-left: auto; }
+  .menu {
+    display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0;
+    background: var(--neige); padding: .5rem 1.25rem 1rem; border-bottom: 1px solid var(--trait);
+  }
+  .menu.ouvert { display: flex; }
+  .menu a { padding: .8rem 0; font-size: 1.15rem; }
+}
+@media (max-width: 760px) {
+  .etapes li { grid-template-columns: 1fr; gap: .3rem; }
+  .faits div { grid-template-columns: 7rem 1fr; }
+  .hero-bas { flex-direction: column; align-items: flex-start; }
+  .hero-photo { align-self: flex-end; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Note obtenue : sur sa propre ligne, en gras */
+.prod-texte .note-obtenue { margin: 1rem 0 0; font-size: 1.15rem; color: var(--encre); }
+
+/* Boutons « Copier » du contact */
+button.btn { font: inherit; font-weight: 700; cursor: pointer; }
+.contact-liste .copier { font: inherit; font-size: .85rem; font-weight: 600; margin-left: .6rem; padding: .15rem .8rem; border-radius: 99px; border: 2px solid #fff; background: transparent; color: #fff; cursor: pointer; }
+.contact-liste .copier:hover { background: #fff; color: var(--encre); }
+
+/* Texte aligné en haut, au niveau de la première photo (série Terra Aletia) */
+.prod.prod-haut { align-items: start; }
+
+.note-contact { margin: 1rem 0 0; font-size: .95rem; color: #fff; }
+
+/* Menu « Écrire un e-mail » : un seul bouton, le visiteur choisit sa messagerie */
+.menu-mail { display: inline-block; }
+.menu-mail summary { list-style: none; cursor: pointer; }
+.menu-mail summary::-webkit-details-marker { display: none; }
+.menu-mail summary::after { content: " ▾"; }
+.menu-mail[open] summary::after { content: " ▴"; }
+.menu-mail-liste { list-style: none; margin: .7rem 0 0; padding: .5rem; background: #fff; border-radius: 1.2rem; min-width: min(100%, 19rem); }
+.menu-mail-liste li + li { margin-top: .2rem; }
+.menu-mail-liste a, .menu-mail-liste button {
+  display: block; width: 100%; text-align: left; font: inherit; font-weight: 600; color: var(--encre);
+  background: transparent; border: 0; border-radius: .8rem; padding: .7rem 1rem; cursor: pointer; text-decoration: none;
+}
+.menu-mail-liste a:hover, .menu-mail-liste button:hover, .menu-mail-liste a:focus-visible, .menu-mail-liste button:focus-visible { background: var(--brume); }
+.boutons { align-items: flex-start; }
+
+/* Titres de section : pas de césure automatique (Safari coupait « compétences » en « compé-tences ») */
+.bloc-grille > h2, .titre-large, h2, h3 { hyphens: none; -webkit-hyphens: none; overflow-wrap: normal; }
+@media (max-width: 340px) { .bloc-grille > h2 { font-size: 1.9rem; } }
+
+/* Aucun mot coupé : pas de césure automatique, et les mots composés (Saint-Malo…) restent d'un seul bloc */
+html, body { hyphens: none; -webkit-hyphens: none; }
+.nb { white-space: nowrap; }
+
+/* ===== Animations douces (désactivées si l'appareil demande moins de mouvement) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  /* 1. Apparition en fondu quand une section arrive à l'écran (une seule fois, 0,6 s) */
+  html.anim .apparait { opacity: 0; transform: translateY(44px); transition: opacity .9s ease-out, transform .9s ease-out; }
+  html.anim .apparait.visible { opacity: 1; transform: none; }
+
+  /* 2. Effets au survol / au toucher */
+  /* Entrée de la page d'accueil : une seule fois, au chargement (indépendante du défilement) */
+  @keyframes entree { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+  .hero-nom { animation: entree .9s ease-out both; }
+  .hero-texte { animation: entree .9s ease-out .2s both; }
+  .hero .boutons { animation: entree .9s ease-out .4s both; }
+  @keyframes entree-photo { from { opacity: 0; transform: rotate(4deg) translateY(36px); } to { opacity: 1; transform: rotate(4deg); } }
+  .hero-photo { animation: entree-photo 1s ease-out .3s both; }
+
+  .btn, .menu a { transition: background-color .2s ease, border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease; }
+  .galerie img { transition: filter .25s ease, transform .35s ease; }
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) {
+  .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+  .galerie a:hover img { transform: scale(1.06); }
+}
+@media print { html.anim .apparait { opacity: 1; transform: none; } }
