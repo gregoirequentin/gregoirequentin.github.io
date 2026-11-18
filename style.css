@@ -330,3 +330,7 @@ html, body { hyphens: none; -webkit-hyphens: none; }
   .galerie a:hover img { transform: scale(1.06); }
 }
 @media print { html.anim .apparait { opacity: 1; transform: none; } }
+
+/* Bouton avec logo (LinkedIn) */
+.btn-logo { display: inline-flex; align-items: center; gap: .6rem; }
+.btn-logo img { width: 1.5rem; height: 1.5rem; border-radius: 4px; flex: none; }

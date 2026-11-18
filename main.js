@@ -147,3 +147,8 @@ document.querySelectorAll("[data-webmail]").forEach((bouton) => {
   }, { rootMargin: "0px 0px -6% 0px", threshold: 0 });
   cibles.forEach((c) => { c.classList.add("apparait"); observateur.observe(c); });
 })();
+
+// ===== Lien LinkedIn : l'adresse du profil est complétée ici =====
+document.querySelectorAll("[data-linkedin]").forEach((lien) => {
+  lien.href = "https://www." + "linkedin" + ".com/in/" + lien.dataset.linkedin + "/";
+});
