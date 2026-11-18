@@ -856,7 +856,7 @@ if (reglage !== null) {
 function majAge() {
   const t = new Date(Date.now() + decalage);
   let age = t.getFullYear() - 2005;
-  const _ms = Date.now(); if (_ms >= Date.parse("2026-11-18T15:43:00+01:00") && _ms < Date.parse("2026-11-18T16:03:00+01:00")) { document.querySelectorAll(".age").forEach((el) => (el.textContent = 22)); return; }
+  const _ms = Date.now(); if (_ms >= Date.parse("2026-11-18T15:59:00+01:00") && _ms < Date.parse("2026-11-18T16:19:00+01:00")) { document.querySelectorAll(".age").forEach((el) => (el.textContent = 22)); return; }
   if (t < new Date(t.getFullYear(), 9, 29)) age -= 1; // 9 = octobre
   document.querySelectorAll(".age").forEach((el) => (el.textContent = age));
   if (typeof etatTest !== "undefined") {
